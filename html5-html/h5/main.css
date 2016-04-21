@@ -1,0 +1,90 @@
+body{
+    background: url(../../img/page-bg.jpg) no-repeat;
+    background-size: 100% auto;
+      background-attachment: fixed;
+  }
+#box,
+#box1 {
+  width: 500px;
+  height: 500px;
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow:inset 0 0 50px white;
+  margin: 100px 60px;
+  position: relative;
+  float: left;
+}
+#box div,
+#box1 div {
+  background-color: white;
+  position: absolute;
+  left: 50%;
+}
+#box div.center,
+#box1 div.center {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: -6px;
+  top: 244px;
+}
+#box div.hou,
+#box1 div.hou {
+  width: 8px;
+  height: 180px;
+  border-radius: 50% 50% 0 0;
+  margin-left: -4px;
+  top: 100px;
+  -webkit-transform-origin: center 150px;
+      -ms-transform-origin: center 150px;
+          transform-origin: center 150px;
+}
+#box div.miu,
+#box1 div.miu {
+  width: 6px;
+  height: 240px;
+  border-radius: 50% 50% 0 0;
+  margin-left: -3px;
+  top: 50px;
+  -webkit-transform-origin: center 200px;
+      -ms-transform-origin: center 200px;
+          transform-origin: center 200px;
+}
+#box div.sec,
+#box1 div.sec {
+  width: 4px;
+  height: 280px;
+  border-radius: 50% 50% 0 0;
+  margin-left: -2px;
+  top: 30px;
+  -webkit-transform-origin: center 220px;
+      -ms-transform-origin: center 220px;
+          transform-origin: center 220px;
+}
+#box span,
+#box1 span {
+  position: absolute;
+  width: 2px;
+  height: 6px;
+  background-color: white;
+  left: 50%;
+  margin-left: -1px;
+  top: 0;
+  -webkit-transform-origin: center 250px;
+      -ms-transform-origin: center 250px;
+          transform-origin: center 250px;
+}
+#box span.long,
+#box1 span.long {
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+}
+#box span.long strong,
+#box1 span.long strong {
+  position: absolute;
+  top: 4px;
+  width: 20px;
+  text-align: center;
+  margin-left: -10px;
+}

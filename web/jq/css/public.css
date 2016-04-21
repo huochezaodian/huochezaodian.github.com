@@ -1,0 +1,49 @@
+body{
+	color: #333;
+    font: 15px "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+.wrap_wide{
+	max-width: 1244px;
+	margin:0 auto;
+	padding:0 20px;
+}
+.center{
+	margin: 0 auto;
+}
+/*.wideM{
+	min-width: 1244px;
+}*/
+.bg{
+	width: 39px;
+	height: 30px;
+	background: url(../img/jq-nav-icons.png);
+	float: left;
+	margin-top: 4px;
+}
+.bg-first{
+	background-position: -7px -40px;
+}
+.bg-two{
+	background-position: -52px 0px;
+}
+.bg-three{
+	background-position: -106px 0px;
+}
+.bg-four{
+	background-position: -156px 0px;
+}
+.bg-five{
+	background-position: -204px 0px;
+}
+.orange{
+	background-color: #B24926;
+}
+.green{
+	background-color: #108040;
+}
+.purple{
+	background-color: #390F39;
+}
+.red{
+	background-color: #9A1B1E;
+}

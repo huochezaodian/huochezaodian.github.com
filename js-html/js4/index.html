@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+img{
+	width: 150px;
+	height: 150px;
+	float: left;
+	margin-left: 30px;
+	position: absolute;
+	top: 100px;
+}
+</style>
+<script>
+window.onload = function(){
+	function getStyle(obj,name){
+		return obj.currentStyle?obj.currentStyle[name]:getComputedStyle(obj,false)[name];
+	}
+	var aImg = document.getElementsByTagName('img');
+	var arr=[];
+	//toMove
+	function toMove(obj,valueL){
+		var timer = null;
+		var dir=true;
+		var data=20;
+
+		clearInterval(timer);
+		timer = setInterval(function(){
+			dir=!dir;
+			if(dir){
+				obj.style.left=valueL-data+'px';
+				//console.log(obj.style.left);
+				data-=2;
+			}else{
+				obj.style.left=valueL+data+'px';
+				//console.log(obj.style.left);
+			}
+			//console.log(obj.style.left);
+			if(data<0){
+				clearInterval(timer);
+			}
+		},50);
+	}
+	//初始值
+	for(var i=0;i<aImg.length;i++){
+		aImg[i].style.left=30+i*180+'px';
+		aImg[i].index=i;
+		arr.push(parseInt(getStyle(aImg[i],'left')));
+		aImg[i].onmouseover = function(){
+			
+			toMove(this,arr[this.index]);
+		};	
+	}
+};
+</script>
+</head>
+<body>
+	<img src="img/0.jpg" alt="">
+	<img src="img/1.jpg" alt="">
+	<img src="img/2.jpg" alt="">
+	<img src="img/3.jpg" alt="">
+	<img src="img/4.jpg" alt="">
+	<img src="img/5.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+	#div1{
+		width: 200px;
+		height: 200px;
+		background-color: purple;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById('div1');
+	var iSpeedX=0;
+	var iSpeedY=0;
+	var timer=null;
+	var lastX=0;
+	var lastY=0
+	oDiv.onmousedown=function(ev){
+		clearInterval(timer);
+		var ev=ev||event;
+		var disX=ev.clientX-oDiv.offsetLeft;
+		var disY=ev.clientY-oDiv.offsetTop;
+		document.onmousemove=function(ev){
+			var ev=ev||event;
+			oDiv.style.left=ev.clientX-disX+'px';
+			oDiv.style.top=ev.clientY-disY+'px';
+			
+			iSpeedX=ev.clientX-lastX;
+			iSpeedY=ev.clientY-lastY;
+
+			lastX=ev.clientX;
+			lastY=ev.clientY;
+		};
+		document.onmouseup=function(ev){
+			move();
+			document.onmousemove=document.onmouseup=null;
+			oDiv.releaseCapture&&oDiv.releaseCapture();
+		};
+		oDiv.setCapture&&oDiv.setCapture();
+		return false;
+	};
+	function move(){
+		clearInterval(timer);
+		timer=setInterval(function(){
+			iSpeedY+=3;
+			var l=oDiv.offsetLeft+iSpeedX;
+			var t=oDiv.offsetTop+iSpeedY;
+
+			if(l<=0){
+				l=0;
+				iSpeedX*=-0.8;
+				iSpeedY*=0.8;
+			}
+			if(t<=0){
+				t=0;
+				iSpeedX*=0.8;
+				iSpeedY*=-0.8;
+			}
+			if(l>=document.documentElement.clientWidth-oDiv.offsetWidth){
+				l=document.documentElement.clientWidth-oDiv.offsetWidth;
+				iSpeedX*=-0.8;
+				iSpeedY*=0.8;
+			}
+			if(t>=document.documentElement.clientHeight-oDiv.offsetHeight){
+				t=document.documentElement.clientHeight-oDiv.offsetHeight;
+				iSpeedX*=0.8;
+				iSpeedY*=-0.8;
+			}
+			
+			if(Math.abs(iSpeedX)<2)iSpeedX=0;
+			if(Math.abs(iSpeedY)<2)iSpeedY=0;
+			if(iSpeedX==0&&iSpeedY==0&&t==document.documentElement.clientHeight-oDiv.offsetHeight){
+				clearInterval(timer);
+			}
+			//console.log(iSpeedX,iSpeedY);
+			oDiv.style.left=l+'px';
+			oDiv.style.top=t+'px';
+		},30);
+	}
+};
+</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

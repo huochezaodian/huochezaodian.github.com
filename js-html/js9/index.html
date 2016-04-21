@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+	div{
+		width: 600px;
+		margin:100px auto;
+	}
+	#ul1{
+		width: 600px;
+		height: 400px;
+		position: relative;
+		margin:50px auto;
+		overflow: hidden;
+	}
+	#ul1 li{
+		list-style:none;
+		width: 520px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+	}
+	#ul1 li span{
+		width: 18px;
+		height: 398px;
+		border:1px solid black;
+		background-color: yellow;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#ul1 li.a1{
+		left: 0;
+		background-color: red;
+	}
+	#ul1 li.a2{
+		left: 520px;
+		background-color: orange;
+	}
+	#ul1 li.a3{
+		left: 540px;
+		background-color: #f40;
+	}
+	#ul1 li.a4{
+		left: 560px;
+		background-color: blue;
+	}
+	#ul1 li.a5{
+		left: 580px;
+		background-color: green;
+	}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function(){
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.children;
+	for(var i=0;i<aLi.length;i++){
+		(function(index){
+			aLi[i].onmouseover=function(){
+				for(var i=0;i<aLi.length;i++){
+					if(i<=index){
+						move(aLi[i],{left:i*20});
+					}else{
+						move(aLi[i],{left:500+i*20});
+					}
+				}
+			};
+		})(i);
+	}
+};
+</script>
+</head>
+<body>
+<div>
+	<ul id="ul1">
+		<li class="a1"><span>第1块</span></li>
+		<li class="a2"><span>第2块</span></li>
+		<li class="a3"><span>第3块</span></li>
+		<li class="a4"><span>第4块</span></li>
+		<li class="a5"><span>第5块</span></li>
+	</ul>
+</div>
+</body>
+</html>

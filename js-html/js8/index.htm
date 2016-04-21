@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+	.wrap{
+		width: 600px;
+		margin:100px auto;
+	}
+	#box{
+		width: 300px;
+		height: 20px;
+		position: relative;
+		top: 200px;
+		left: 120px;
+	}
+	#bar{
+		height: 20px;
+		background-color: blue;
+		opacity: .5;
+		filter:alpha(opacity=50);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#scale{
+		position: absolute;
+		top: -190px;
+		left: -120px;
+		z-index: 1;
+		width: 650px;
+		height: 400px;
+		line-height: 400px;
+		text-indent: 250px;
+		color: white;
+		font-weight: 900;
+	}
+	#box2{
+		margin:0 auto;
+	}
+</style>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var oBar=document.getElementById('bar');
+	var oScale=document.getElementById('scale');
+	var count=0;
+	for(var i=0;i<77;i++){
+		var oImg=new Image();
+		oImg.src='http://www.zhinengshe.com/works/3525/img/'+i+'.jpg';
+		oImg.onload=function(){
+			count++;
+			var scale=Math.round(count/77*100);
+			oBar.style.width=scale+'%';
+			oScale.innerHTML=scale+'%';
+			if(count==77){
+				oBox.style.display='none';
+			}
+		};
+	}
+	var oBox2=document.getElementById('box2');
+	var oImg=oBox2.children[0];
+	var iNow=0;
+	oBox2.onmousedown=function(ev){
+		var ev=ev||event;
+		var cX=ev.clientX;
+		document.onmousemove=function(ev){
+			var ev=ev||event;
+			if(ev.clientX>cX){
+				iNow--;
+				if(iNow<0){
+					iNow=76;
+				}
+			}else if(ev.clientX<cX){
+				iNow++;
+				if(iNow>76){
+					iNow=0;
+				}
+			}
+			cX=ev.clientX;
+			oImg.src='img/'+iNow+'.jpg';
+			return false;
+		};
+		oBox2.onmouseout=document.onmouseup=function(){
+			document.onmousemove=null;
+		};
+		return false;
+	};
+};
+</script>
+</head>
+<body>
+<div class="wrap">
+	<div id="box">
+		<div id="bar">
+		</div>
+		<div id="scale">0%</div>
+	</div>
+	<div id="box2">
+		<img src="img/0.jpg" alt="">
+	</div>
+</div>
+</body>
+</html>

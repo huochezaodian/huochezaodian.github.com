@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="main.css">
+<script>
+	window.onload=function(){
+		var oBox=document.querySelector('#box');
+		var oBox1=document.querySelector('#box1');
+		time(oBox);
+		time(oBox1);
+		function time(obj){
+			for(var i=0;i<60;i++){
+				var oS=document.createElement('span');
+				if(i%5==0){
+					oS.className='long';
+					oS.innerHTML='<strong>'+(i/5==0?12:i/5)+'</strong>';
+					var oStrong=oS.children[0];
+					oStrong.style.WebkitTransform='rotate(-'+i*6+'deg)';
+					oStrong.style.MozTransform='rotate(-'+i*6+'deg)';
+					oStrong.style.msTransform='rotate(-'+i*6+'deg)';
+					oStrong.style.OTransform='rotate(-'+i*6+'deg)';
+					oStrong.style.transform='rotate(-'+i*6+'deg)';
+				}
+				oS.style.WebkitTransform='rotate('+i*6+'deg)';
+				oS.style.MozTransform='rotate('+i*6+'deg)';
+				oS.style.msTransform='rotate('+i*6+'deg)';
+				oS.style.OTransform='rotate('+i*6+'deg)';
+				oS.style.transform='rotate('+i*6+'deg)';
+				obj.appendChild(oS);
+			}
+			var oHou=obj.querySelector('.hou');
+			var oMiu=obj.querySelector('.miu');
+			var oSec=obj.querySelector('.sec');
+			time2();
+			if(obj==oBox1){
+				setInterval(time2,1);
+			}else{
+				setInterval(time2,1000);
+			}
+			setInterval(time2,1000);
+			function time2(){
+				var oDate=new Date();
+				var h=oDate.getHours()%12;
+				var m=oDate.getMinutes();
+				var s=oDate.getSeconds();
+				var ms=oDate.getMilliseconds();
+				oHou.style.WebkitTransform='rotate('+(h+m/60)*30+'deg)';
+				oHou.style.MozTransform='rotate('+(h+m/60)*30+'deg)';
+				oHou.style.msTransform='rotate('+(h+m/60)*30+'deg)';
+				oHou.style.OTransform='rotate('+(h+m/60)*30+'deg)';
+				oHou.style.transform='rotate('+(h+m/60)*30+'deg)';
+				oMiu.style.WebkitTransform='rotate('+(m+s/60)*6+'deg)';
+				oMiu.style.MozTransform='rotate('+(m+s/60)*6+'deg)';
+				oMiu.style.msTransform='rotate('+(m+s/60)*6+'deg)';
+				oMiu.style.OTransform='rotate('+(m+s/60)*6+'deg)';
+				oMiu.style.transform='rotate('+(m+s/60)*6+'deg)';
+				oSec.style.WebkitTransform='rotate('+(s+ms/1000)*6+'deg)';
+				oSec.style.MozTransform='rotate('+(s+ms/1000)*6+'deg)';
+				oSec.style.msTransform='rotate('+(s+ms/1000)*6+'deg)';
+				oSec.style.OTransform='rotate('+(s+ms/1000)*6+'deg)';
+				oSec.style.transform='rotate('+(s+ms/1000)*6+'deg)';
+			}
+		}
+	};
+</script>
+</head>
+<body>
+	<div id="box">
+		<div class="center"></div>
+		<div class="hou"></div>
+		<div class="miu"></div>
+		<div class="sec"></div>
+	</div>
+	<div id="box1">
+		<div class="center"></div>
+		<div class="hou"></div>
+		<div class="miu"></div>
+		<div class="sec"></div>
+	</div>
+</body>
+</html>

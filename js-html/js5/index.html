@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+	#div1,#div2{
+		float: left;
+		width: 310px;
+		height: 310px;
+		position: relative;
+		margin:100px;
+	}
+	#div1 div{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-color: yellow;
+		opacity:.5;
+		filter:alpha(opacity=50);
+		display: none;
+	}
+	#div1 img{
+		width: 310px;
+		height: 310px;
+	}
+	#div2{
+		overflow: hidden;
+		display: none;
+	}
+	#div2 img{
+		width: 800px;
+		height: 800px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+</style>
+<script>
+window.onload=function(){
+	var oDiv1=document.getElementById('div1');
+	var oMask=oDiv1.children[1];
+	var oDiv2=document.getElementById('div2');
+	var oImg=oDiv2.children[0];
+	oDiv1.onmouseover=function(){
+		oDiv2.style.display='block';
+		oMask.style.display='block';
+	};
+	oDiv1.onmouseout=function(){
+		oDiv2.style.display='none';
+		oMask.style.display='none';
+	};
+	document.onmousemove=function(ev){
+		var ev=ev||event;
+
+		var t=ev.clientY-oDiv1.offsetTop-oMask.offsetHeight/2;
+		var l=ev.clientX-oDiv1.offsetLeft-oMask.offsetWidth/2;
+		
+		if(t<0){
+			t=0;
+		}else if(t>oDiv1.offsetHeight-oMask.offsetHeight){
+			t=oDiv1.offsetHeight-oMask.offsetHeight
+		}
+		if(l<0){
+			l=0;
+		}else if(l>oDiv1.offsetWidth-oMask.offsetWidth){
+			l=oDiv1.offsetWidth-oMask.offsetWidth
+		}
+
+		oMask.style.top=t+'px';
+		oMask.style.left=l+'px';
+
+		var T=-t*(oImg.offsetHeight-oDiv2.offsetHeight)/(oDiv1.offsetHeight-oMask.offsetHeight);
+		var L=-l*(oImg.offsetWidth-oDiv2.offsetWidth)/(oDiv1.offsetWidth-oMask.offsetWidth);
+
+		oImg.style.top=T+'px';
+		oImg.style.left=L+'px';
+	};
+};
+</script>
+</head>
+<body>
+	<div id="div1">
+		<img src="img/2.jpg" alt="">
+		<div></div>
+	</div>
+	<div id="div2">
+		<img src="img/2.jpg" alt="">
+	</div>
+</body>
+</html>

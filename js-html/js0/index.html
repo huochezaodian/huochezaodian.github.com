@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+	div{
+		margin:200px 200px;
+	}
+	#ul1 li{
+		list-style: none;
+		width: 200px;
+		height: 200px;
+		background-color: gray;
+		margin:15px;
+		position: relative;
+		float: left;
+		overflow: hidden;
+	}
+	#ul1 li span{
+		width:100%;
+		height: 100%;
+		background-color: red;
+		position: absolute;
+		top: 0;
+		left: -200px;
+	}
+</style>
+<script src="move8.js"></script>
+<script>
+window.onload=function(){
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.children;
+	for(var i=0;i<aLi.length;i++){
+		coll(aLi[i]);
+	}
+
+	function coll(obj){
+		var oS=obj.children[0];
+		obj.onmouseover=function(ev){
+			var ev=ev||event;
+			var oFrom=ev.fromElement||ev.relatedTarget;
+			if(obj.contains(oFrom)){
+				return;
+			}
+			var dir=toDir(obj,ev);
+			switch(dir){
+				case 0:
+					oS.style.left='200px';
+					oS.style.top='0';
+				break;
+				case 1:
+					oS.style.left='0';
+					oS.style.top='200px';
+				break;
+				case 2:
+					oS.style.left='-200px';
+					oS.style.top='0';
+				break;
+				case 3:
+					oS.style.left='0';
+					oS.style.top='-200px';
+				break;
+			}
+			move(oS,{top:0,left:0});
+		};
+		obj.onmouseout=function(ev){
+			var ev=ev||event;
+			var oTo=ev.toElement||ev.relatedTarget;
+			if(obj.contains(oTo)){
+				return;
+			}
+			var dir=toDir(obj,ev);
+			switch(dir){
+				case 0:
+					move(oS,{top:0,left:200});
+				break;
+				case 1:
+					move(oS,{top:200,left:0});
+				break;
+				case 2:
+					move(oS,{top:0,left:-200});
+				break;
+				case 3:
+					move(oS,{top:-200,left:0});
+				break;
+			}
+		};
+	}
+
+	function toDir(obj,ev){
+		var x=obj.offsetLeft+obj.offsetWidth/2-ev.clientX;
+		var y=obj.offsetTop+obj.offsetHeight/2-ev.clientY;
+		return Math.round((a2d(Math.atan2(y,x))+180)/90)%4;
+	}
+	function a2d(n){
+		return n*180/Math.PI;
+	}
+};
+</script>
+</head>
+<body>
+<div>
+	<ul id="ul1">
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+	</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+#wrap{
+	margin:100px auto;
+	width: 600px;
+}
+.fl{
+	float: left;
+}
+img{
+	width: 600px;
+	height: 400px;
+	float: left;
+	position: relative;
+}
+.wrap{
+	width: 3600px;
+	position: absolute;
+	left: -600px;
+}
+.div{
+	width: 600px;
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+}
+.on{
+	background-color: red;
+}
+span{
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	background-color: #777;
+	margin:10px;
+	border-radius: 50%;
+}
+.box{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;	
+}
+a{
+	width:44px;
+	height: 80px;
+	background-image: url(img/lr.png);
+	position: absolute;
+	top: 40%;
+	z-index: 1;
+}
+#pre{
+	background-position: 0 0;
+	left: 630px;
+}
+#pre:hover{
+	background-position: 0 -80px;
+}
+#next{
+	background-position: 0 -160px;
+	left: 1120px;
+}
+#next:hover{
+	background-position: 0 -240px;
+}
+</style>
+<script>
+window.onload = function(){
+	function reset(aSpan,aImg,dir){
+		onOff=true;
+		t=0;
+		aSpan[iNow].className = '';
+		if(dir=='right'){
+			iNow++;
+			if(iNow==aImg.length){iNow = 0;}
+		}else{
+			iNow--;
+			if(iNow==-1){iNow = aImg.length-1;}
+		}
+		aSpan[iNow].className = 'on';
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].style.left=t+'px';
+		}
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].src = 'img/'+(iNow+i)%6+'.jpg';
+		}
+	}
+	function toMove(dir){
+		var aImg = oDiv.getElementsByTagName('img');
+		var aSpan = oDiv.getElementsByTagName('span');
+		var	t=0;
+		var timer=null;
+		clearInterval(timer);
+		timer = setInterval(function(){
+			dir=='right'?t-=60:t+=60;
+			for(var i=0;i<aImg.length;i++){
+				aImg[i].style.left=t+'px';
+			}
+			if(t==-600||t==600){
+				clearInterval(timer);
+				reset(aSpan,aImg,dir);
+			}
+		},30);
+	}
+
+	var oDiv = document.getElementsByTagName('div')[0];
+	var aSpan = oDiv.getElementsByTagName('span');
+	var oPre = document.getElementById('pre');
+	var oNext = document.getElementById('next');
+	var iNow = 0;
+	var timer1 = null;
+	var onOff=true;
+
+	for(var i=0;i<aSpan.length;i++){
+		aSpan[i].index=i;
+		var dir='';
+		aSpan[i].onclick=function(){
+			var data=this.index-iNow;
+			var timer2=null;
+			if(data>0){
+				dir='right';
+			}else{
+				dir='left';
+			}
+			var count=Math.abs(data);
+			clearInterval(timer2);
+			timer2 = setInterval(function(){
+					count--;
+					toMove(dir);
+					if(count==0){
+						clearInterval(timer2);
+					}
+			},500)
+			
+		};
+	}
+	clearInterval(timer1);
+	timer1 = setInterval(function(){
+		toMove('right');
+	},1000);
+
+	oNext.onclick=function(){
+		if(onOff){
+			onOff=false;
+			toMove('right');
+		}
+	};
+
+	oPre.onclick = function(){
+		if(onOff){
+			onOff=false;
+			toMove('left');
+		}
+	};
+
+	oDiv.onmouseover = function(){
+		clearInterval(timer1);
+	};
+
+	oDiv.onmouseout = function(){
+		clearInterval(timer1);
+		timer1 = setInterval(function(){
+			toMove('right');
+		},1000);
+	};
+};
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="fl div">
+			<div class="wrap">
+				<a href="javescript:;" id="pre"></a>
+				<img src="img/0.jpg" alt="">
+				<img src="img/1.jpg" alt="">
+				<img src="img/2.jpg" alt="">
+				<img src="img/3.jpg" alt="">
+				<img src="img/4.jpg" alt="">
+				<img src="img/5.jpg" alt="">
+				<a href="javescript:;" id="next"></a>
+			</div>
+			<div class="box">
+				<span class="on"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

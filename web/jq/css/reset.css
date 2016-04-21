@@ -1,0 +1,93 @@
+@charset "utf-8";
+/*reset*/
+*{
+	margin:0;
+	padding:0;
+}
+/*通用*/
+::-webkit-input-placeholder { color:#fff; }
+::-moz-placeholder { color:#fff; } /* firefox 19+ */
+:-ms-input-placeholder { color:#fff; } /* ie */
+input:-moz-placeholder { color:#fff; }
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+input{
+	outline: none;
+}
+span{
+	display: inline-block;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: 700;
+    font-family: "klavika-web", "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif !important;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.clear{
+	zoom=1;
+}
+.clear:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+pre, code {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-spacing: 0;
+    font-size: 13px;
+    line-height: 16px;
+}
+code {
+    padding: 0 3px;
+    background-color: #eee; /* support: IE8 */;
+    background-color: rgba( 0, 0, 0, .1 );
+    border-radius: 3px;
+}
+pre code {
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: pre;
+    word-wrap: normal;
+}
+.con_code a, .con_code div, .con_code pre, .con_code code, .con_code table, .con_code table td, .con_code table tr, .con_code table tbody, .con_code table thead, .con_code table caption, .con_code textarea {
+    border-radius: 0 0 0 0;
+    background: none;
+    bottom: auto;
+    float: none;
+    height: auto;
+    left: auto;
+    line-height: 1.1em;
+    margin: 0;
+    outline: 0;
+    overflow: visible;
+    padding: 0;
+    position: static;
+    right: auto;
+    text-align: left;
+    top: auto;
+    vertical-align: baseline;
+    width: auto;
+    box-sizing: content-box;
+    font-family: "source-code-pro", Consolas, monospace;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+    min-height: auto;
+}

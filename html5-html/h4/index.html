@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+.wrap{
+	width: 500px;
+	margin:100px auto;
+}
+@keyframes test{
+	from{
+		top:0;
+	}
+	to{
+		top:-348px;
+	}
+}
+*{
+	margin:0;
+	padding:0;
+}
+span.first{
+	font-size: 30px;
+	color:red; 
+}
+span.second{
+	font-size: 30px;
+	color:green; 
+}
+.box{
+	width: 400px;
+	height: 40px;
+	border-radius: 10px;
+	overflow: hidden;
+	border:1px solid black;
+	margin:50px 100px;
+	position: relative;
+}
+.box .bar{
+	width: 100%;
+	height: 400px;
+	background: -webkit-repeating-linear-gradient(45deg,#ff0000 0,#ff0000 20px,#00ff00 20px,#00ff00 40px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-animation-name:test;
+	-webkit-animation-duration:2s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-iteration-count:infinite;
+}
+</style>
+<script>
+window.onload=function(){
+	var aInp=document.querySelectorAll('input');
+	var aSp=document.querySelectorAll('span');
+	var oBar=document.querySelector('.bar');
+	for(var i=0;i<aInp.length;i++){
+		aInp[i].index=i;
+		aInp[i].onchange=function(){
+			aSp[this.index].innerHTML=this.value;
+			oBar.style.background=' -webkit-repeating-linear-gradient(45deg,'+aInp[0].value+' 0,'+aInp[0].value+' 20px,'+aInp[1].value+' 20px,'+aInp[1].value+' 40px)';
+		};
+	}
+};
+</script>
+</head>
+<body>
+<div class="wrap">
+	<input type="color" value="#ff0000">
+	<input type="color" value="#00ff00"><br>
+	<span class="first">#ff0000</span>
+	<span class="second">#00ff00</span>
+	<div class="box">
+		<div class="bar"></div>
+	</div>
+</div>
+</body>
+</html>

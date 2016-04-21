@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style>
+*{
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+body{
+		background: url(../../img/page-bg.jpg) no-repeat;
+	 	background-size: 100% auto;
+	  	background-attachment: fixed;
+	}
+ul{
+	width: 328px;
+	height: 50px;
+	position: relative;
+	margin:100px auto;
+	background-color:gray;
+}
+ul li{
+	width: 80px;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	border:1px solid black;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+#block{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	background-color: aqua;
+}
+</style>
+<script src="move2.js"></script>
+<script>
+window.onload=function(){
+	var aLi=document.getElementsByTagName('li');
+	var oBlock=document.getElementById('block');
+	var iNow=0;
+	for(var i=0;i<aLi.length-1;i++){
+		aLi[i].onmouseover=function(){
+			move(oBlock,this.offsetLeft);
+		};
+		aLi[i].onmouseout=function(){
+			move(oBlock,iNow*this.offsetWidth);
+		};
+		(function(index){
+			aLi[i].onclick=function(){
+				iNow=index;
+			};
+		})(i);
+	}
+};
+</script>
+</head>
+<body>
+	<ul>	
+		<li>首页</li>
+		<li>导航</li>
+		<li>内容</li>
+		<li>我的</li>
+		<li id="block"></li>
+	</ul>
+</body>
+</html>

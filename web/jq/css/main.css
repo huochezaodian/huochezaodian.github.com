@@ -1,0 +1,487 @@
+.head{
+	height: 37px;
+	background-color:#3f3f3f;
+	border-bottom: 2px solid #7acef4;
+}
+.head .header{
+	margin-left: 28px;
+}
+.head .other{
+	width: 40px;
+}
+.head .other_side{
+	width: 46px;
+}
+.head .menu{
+	color: #e6e6e6;
+	line-height: 35px;
+	margin:0 12px;
+}
+.head .foot{
+	height: 35px;
+	margin-right: 22px;
+}
+/* body */
+.main{
+	background-color: #0769ad;
+}
+.mainTitle{
+	height: 116px;
+	padding-top: 20px;
+}
+.mainTitle .title_pic{
+	width: 243px;
+	height: 66px;
+}
+.mainTitle .title_side_right{
+	width: 400px;
+	height: 100px;
+}
+.content{
+
+}
+.content .con_Head{
+	background-color: rgba(0, 0, 0, 0.18);
+    border-radius: 10px 10px 0 0;
+    border-right: 1px solid rgba(2, 2, 2, 0.28);
+    border-left: 1px solid rgba(2, 2, 2, 0.28);
+    border-top: 1px solid rgba(250, 250, 250, 0.27);
+    box-shadow: 0 0 5px rgba(1, 1, 1, 0.7);
+    padding:0 20px;
+}
+.con_Head ul{
+	padding:10px 0;
+    width: 70%;
+}
+.con_Head ul li{
+	margin-right: 2px;
+	float: left;
+} 
+.con_Head ul li a{
+	color: #fff;
+    padding: 6px 10px;
+    display: block;
+    font-weight: bold;
+    /*border: 1px solid transparent;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.76);*/
+}
+.con_Head form{
+    width: 28%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 0;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.25);
+    color: #fff;
+    position: relative;
+    background: none;
+    box-shadow: inset 0 0 5px rgba(0,0,0, 0.4), rgba(255,255,255,0.1) 0 1px 0;
+    border: 1px solid rgba(0,0,0,0.25);
+    color: #fff;
+    text-shadow: rgba(0, 0, 0, 0.796875) 0 -1px 0, rgba(255, 255, 255, 0.296875) 0 0 10px;
+    box-sizing: border-box;
+}
+.con_Head form button{
+	float: right;
+	position: absolute;
+    right: 10px;
+    top: 3px;
+    bottom: 3px;
+    border-width: 0;
+    border-left: 1px solid rgba(7, 7, 7, 0.65);
+    background-color: transparent;
+    padding: 0 0 0 7px;
+    opacity: 0.33;
+    color: #fff;
+}
+.con_Head form div{
+    width: 85%;
+	float: left;
+}
+.con_Head form input{
+	text-decoration: none;
+    font: 12px/12px "Lucida Grande", Lucida, Verdana, sans-serif;
+    padding: 5px 10px;
+    margin: 0;
+    background-color: transparent;
+    border-style: none;
+    color: #fff;
+    line-height: 1.3;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.76);
+    width: 85%;
+}
+.con_head2{
+	background-image: url(../img/dark-grey-tile.png);
+    padding: 20px;
+}
+.con_head2 ul{
+	float: right;
+	width: 66.66667%;
+	margin: 0 -25px;
+    position: relative;
+    right: 33.33333%;
+}
+.con_head2 li{
+	float: left;
+    min-height: 1px;
+    padding: 0 25px;
+    width: 33.33333%;
+    text-align: center;
+}
+.con_head2 li div{
+	background: url(../img/feature-sprites.png) 0 0 no-repeat;
+	margin: 0 auto 1em auto;
+    width: 120px;
+    height: 107px;
+    overflow: hidden;
+}
+
+.con_head2 li div.two{
+	background-position: -139px 0;
+}
+.con_head2 li div.three{
+    transition: all 0.4s;
+	background-position: -278px 0;
+}
+.con_head2 li div.three:hover{
+	-webkit-transform:rotate(360deg);
+}
+.con_head2 li h3{
+	font-size: 20px;
+    line-height: 20px;
+    color: #7ACEF4;
+    margin-bottom: 0.5em;
+}
+.con_head2 li p{
+	font-size: .8em;
+    line-height: 1em;
+    padding: 0;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+.con_head2 .Hright{
+	width: 33.33333%;
+    min-height: 1px;
+    padding: 0 25px;
+    position: relative;
+    left: 66.66667%;
+}
+a.button{
+	box-shadow: 0px 0px 20px rgba(209, 143, 79, 0.6);
+	background-color: #d18f4f;
+	color: #fff !important;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.35);
+	font: bold 16px/16px "klavika-web", "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+}
+.con_head2 .Hright a{
+	display: block;
+    padding: 0 0 .5em 0;
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    line-height: 0.8em;
+}
+.con_head2 .Hright .button span{
+	display: block;
+    font-size: 0.6em;
+}
+.con_head2 .Hright .button .download{
+	background: url(../img/download.png) 0px 0px;
+    width: 44px;
+    height: 37px;
+    position: relative;
+    top: 1em;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+.con_head2 .Hright .option{
+	margin-top: 1em;
+}
+.con_head2 .Hright .option a{
+	display: block;
+	color: #b3b3b3;
+	text-decoration: underline;
+}
+.content2{
+    padding:20px 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 0 0 10px 10px;
+}
+.content2 .cont_left{
+    width: 66.666666667%;
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+.content2 .cont_left h2{
+    font-size: 24px;
+    line-height: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 10px 2%;
+    background-color: gray;
+}
+.content2 .cont_right{
+    width: 33.33333%;
+    padding-left: 60px;
+}
+.content2 .cont_left p{
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.content2 .cont_left .ul{
+    margin: 0 0 20px 20px;
+}
+.content2 .cont_left .ul li{
+    height: 150px;
+    text-align: center;
+    padding-left: 20px;
+    line-height: 20px;
+    list-style-type: none;
+    width: 25%;
+    float: left;
+    padding: 5px 25px;
+    position: relative;
+}
+.content2 .cont_left .ul li span{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.content2 .cont_left .ul li img{
+    vertical-align: middle;
+    max-height: 150px;
+    max-width: 100%;
+}
+.content2 .cont_left section div{
+    width: 50%;
+    text-align: center;
+    float: left;
+    padding: 15px 25px;
+}
+.content2 .cont_left section div a{
+    height: 30px;
+    background: url(img/jq-nav-icons.png) no-repeat;
+}
+.content2 .cont_right h6{
+    font-size: 20px;
+    line-height: 20px;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+.content2 .cont_right ul{
+    margin: 0 0 20px 20px;
+}
+.content2 .cont_right ul li{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 20px;
+    line-height: 20px;
+    list-style-type: none;
+}
+.content2 .cont_right ul li a{
+    text-decoration: underline;
+    color: #B24926;
+}
+.content2 .con_footer{
+    clear: both;
+}
+.con_footer h2{
+    font-size: 24px;
+    line-height: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 10px 2%;
+    background-color: #ececec;
+}
+.con_footer h3{
+    font-size: 20px;
+    line-height: 20px;
+    color: #666;
+    margin-bottom: 14px;
+}
+.con_footer p{
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.con_footer p code{
+    padding: 0 3px;
+    background-color: rgba( 0, 0, 0, .1 );
+    border-radius: 3px;
+}
+.con_code{
+    width: 100%;
+    margin: 1em 0 1em 0;
+    padding: 1em 0;
+    position: relative;
+    overflow: auto;
+    font-size: 1em;
+    background: #eee;
+    border-radius: 5px;
+}
+.con_code table{
+    width: 100%;
+}
+.con_code table .gutter{
+    border-right: 2px solid #999;
+}
+.con_code table .code{
+    width: 100%;
+}
+.con_code table .gutter .line{
+    text-align: right;
+    padding: 0 7.5px 0 15px;
+}
+.con_code table .code .container{
+    position: relative;
+}
+.con_code table .code .container .line{
+    padding:0 7.5px;
+}
+.con_code table .code .container .line span{
+    color: #d14;
+}
+/* body end */
+/* footer */
+.footer{
+	background-color: #282828;
+    margin-top: -20px;
+    padding:45px 0 10px 0;
+}
+.footer .constrain{
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer .constrain .row{
+    width: 1240px;
+    max-width: 100%;
+    min-width: 768px;
+    margin: 0 auto;
+}
+.footer .constrain .row .content{
+    margin-left: 25%;
+    width: 50%;
+    float: left;
+    min-height: 1px;
+    padding: 0 25px;
+    position: relative;
+}
+.footer .constrain .row .content h3{
+    color: #777;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: #000 0 1px 0;
+    border: solid 1px #000;
+    text-rendering: optimizeLegibility;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    text-align: center;
+    height: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.footer .constrain .row .content h3 span{
+    display: inline-block;
+    padding: 3px 10px;
+    position: relative;
+    top: -0.8em;
+    background: url(../img/bg-footer-noise.jpg) repeat #212121;
+    z-index: 1;
+}
+.footer .constrain .row .content ul li{
+    float: left;
+    width: 30%;
+    min-width: 95px;
+    margin:0 0 15px 11px;
+    margin-bottom: 15px;
+    line-height: 130%;
+    font-size: 11px;
+    text-align: center;
+}
+.footer .constrain .row .content ul li img{
+    display: block;
+    border-radius: 5px;
+    border: solid 1px rgba(255,255,255,0.2);
+    width: 92px;
+    height: 114px;
+    margin: 0 auto 5px;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.footer .constrain .row .content ul li cite{
+    display: block;
+    font-style: normal;
+    font-size: 9px;
+    line-height: 18px;
+    color: #aaa;
+}
+.footer .constrain .legal{
+    margin-top: 15px;
+    border-top: solid 1px #333;
+    box-shadow: #000 0 -1px 0;
+}
+.footer .constrain .legal ul{
+    float: right;
+    padding: 10px 0 0 0;
+    width: 58%;
+    text-align: right;
+    margin-bottom: 15px;
+}
+.footer .constrain .legal ul li{
+    position: relative;
+    background: none;
+    width: auto;
+    height: auto;
+    line-height: 20px;
+    margin: 0 0 10px 20px;
+    font-size: 13px;
+    display: inline-block;
+}
+.footer .constrain .legal ul li a{
+    position: relative;
+    color: #aaa;
+    display: block;
+    padding-left: 30px;
+    width: auto;
+    line-height: inherit;
+}
+.footer .constrain .legal p{
+    margin: 10px 0 0 0;
+    float: left;
+    width: 40%;
+    font-size: 11px;
+    line-height: 130%;
+    color: #777;
+}
+.footer .constrain .legal p a{
+    color: #aaa;
+}
+.footer .constrain .legal p span{
+    display: block;
+    font-size: 10px;
+    margin-top: 12px;
+}
+.footer .constrain .legal p span a{
+    padding-left: 31px;
+    color: #aaa;
+}
+.footer .constrain .legal p span a.cdn{
+    padding-left: 24px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.footer .constrain .legal p span a.pow{
+    padding-left: 19px;
+    padding-top: 1px;
+    display: inline-block;
+    height: 16px;
+}
+.footer .constrain .legal p span a.none{
+    padding: 0;
+}
+/* footer end */
