@@ -1,4 +1,9 @@
+var oBody=document.body;
+//"overflow-x":"hidden",
+// "overflow-y":"hidden"
+oBody.style.overflowY='hidden';
 window.onload=function(){
+oBody.style.overflowY='auto';
 	//web
 //加载完成
 var oLoad=document.querySelector('#loading');
