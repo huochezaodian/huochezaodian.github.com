@@ -1,5 +1,8 @@
 window.onload=function(){
 	//web
+//加载完成
+var oLoad=document.querySelector('#loading');
+oLoad.style.display='none';
 (function(){
 	var oWeb=document.querySelector('#content_web');
 	var aLi=oWeb.querySelectorAll('li');
