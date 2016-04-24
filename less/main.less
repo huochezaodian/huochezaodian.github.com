@@ -19,7 +19,7 @@
     background: url(../img/page-bg.jpg) no-repeat top center;
     background-size: 100% auto;
     background-attachment: fixed;
-    float: left;
+    float: left;		
     .wrap{
     	width: 1200px;
     	margin-left: auto;
@@ -30,10 +30,41 @@
 			.main_nav{
 				float: left;
 				position: relative;
-				width: 28%;
+				top: -40px;
+				width: 300px;
+				height: 600px;
+				overflow: hidden;
+				ul{
+					position: relative;
+					width: 300px;
+					height: 600px;
+					transform-style:preserve-3d;
+					perspective:800px;
+				}
 				li{
-					margin-bottom: 10px;
-					width: 80%;
+					width: 260px;
+					height: 200px;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					margin-top: -100px;
+					margin-left: -130px;
+					opacity: 0;
+					transition:1s all ease;
+					&.t1{
+						opacity: .5;
+						z-index: 2;
+						transform:translateY(-200px) translateZ(-100px) rotateX(45deg);
+					}
+					&.cur{
+						opacity: 1;
+						z-index: 3;
+					}
+					&.b1{
+						opacity: .5;
+						z-index: 2;
+						transform:translateY(200px) translateZ(-100px) rotateX(-45deg);
+					}
 					a{
 						display: inline-block;
 						position: relative;
@@ -68,22 +99,28 @@
 			}
 			.main_content{
 				float: right;
-				width: 72%;
+				width: 864px;
+				height: 500px;
 				transform-style:preserve-3d;
 				perspective:800px;
 				.content_wrap{
-					width: 100%;
+					width: 864px;
+					height: 500px;
 					position: relative;
+					transform-style:preserve-3d;
+					.list{
+						opacity: 0;
+						transition:1s all ease;
+					}
 					ul{
-						width: 100%;
+						width: 864px;
 						height: 500px;
-						border:1px solid black;
-						position: relative;
+						position: absolute;
+						top: 0;
+						left: 0;
 						li{
 							cursor: pointer;
 							position: relative;
-						}
-						&.home{
 						}
 						&.home li{
 							border-top: 7px solid #10a5cd;
@@ -257,24 +294,25 @@
 							line-height: 30px;
 							position: absolute;
 							border:1px solid black;
-							background-color: white;
+							background-color: black;
 							box-shadow:0 0 5px #eee;
 							border-radius: 4px;
-							color: black;
+							color: white;
 							&.active{
-								background-color: #333;
-								color: white;
+								background-color: white;
+								color: gray;
 							}
 						}
 					}
 					.html5_wrap{
-						width: 100%;
+						width: 864px;
 						height: 500px;
-						border:1px solid black;
-						position: relative;
+						position: absolute;
+						left: 0;
+						top: 0;
 						.html5{
-							width: 100%;
-							height: 100%;
+							width: 864px;
+							height: 500px;
 							position: relative;
 							transform:rotateX(0deg) rotateY(0deg);
 							li{
@@ -290,12 +328,12 @@
 								transform-style:preserve-3d; 
 								transform:perspective(800px) rotateX(0deg) rotateY(0deg);
 								a{
-									width: 100%;
-									height: 100%;
+									width: 133px;
+									height: 200px;
 								}
 								span{
-									width: 100%;
-									height: 100%;
+									width: 133px;
+									height: 200px;
 									border:5px solid white;
 									border-radius: 10px;
 									box-shadow: 0 0 10px white;

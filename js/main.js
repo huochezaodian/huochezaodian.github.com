@@ -6,6 +6,44 @@ oBody.style.overflowY='auto';
 //加载完成
 var oLoad=document.querySelector('#loading');
 oLoad.style.display='none';
+
+//导航
+(function(){
+	var oNav=document.querySelector('#main_nav');
+	var aLi=oNav.querySelectorAll('li');
+	var oContentWrap=document.querySelector('.content_wrap');
+	var aList=oContentWrap.querySelectorAll('.list');
+	var iNow=0;
+	var len=aLi.length;
+	aList[iNow].style.opacity=1;
+	for(var i=0;i<len;i++){
+		aLi[i].index=i;
+		aLi[i].onclick=function(){
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].className='';
+				aList[i].style.opacity=0;
+			}
+			var deg=this.index*90;
+
+			oContentWrap.style.WebkitTransform='rotateX('+deg+'deg)';
+			oContentWrap.style.MozTransform='rotateX('+deg+'deg)';
+			oContentWrap.style.msTransform='rotateX('+deg+'deg)';
+			oContentWrap.style.OTransform='rotateX('+deg+'deg)';
+			oContentWrap.style.transform='rotateX('+deg+'deg)';
+
+
+			iNow=this.index;
+			aLi[iNow==0?len-1:iNow-1].className='t1';
+			aLi[iNow].className='cur';
+			aLi[iNow==len-1?0:iNow+1].className='b1';
+
+			//aList[iNow==0?len-1:iNow-1].style.opacity=0;
+			aList[iNow].style.opacity=1;
+			//aList[iNow==len-1?0:iNow+1].style.opacity=0;
+		};
+	}
+})();
+
 //home
 (function(){
 	var oMsg=document.getElementById('message');

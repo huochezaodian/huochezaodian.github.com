@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/3d.css">
     <title>my web</title>
 </head>
 
@@ -15,17 +16,17 @@
     <div class="main_body">
         <div class="wrap">
             <div class="main_page">
-                <div class="main_nav">
-                    <ul>
-                        <li><a href="javascript:;" class="home"><span>HOME</span></a></li>
-                        <li><a href="javascript:;" class="web"><span>WEBPAGE</span></a></li>
+                <div class="main_nav" >
+                    <ul id="main_nav">
+                        <li class="cur"><a href="javascript:;" class="home"><span>HOME</span></a></li>
+                        <li class="b1"><a href="javascript:;" class="web"><span>WEBPAGE</span></a></li>
                         <li><a href="javascript:;" class="js"><span>JS、jQuery...</span></a></li>
-                        <li><a href="javascript:;" class="html5"><span>HTML5、CSS3...</span></a></li>
+                        <li class="t1"><a href="javascript:;" class="html5"><span>HTML5、CSS3...</span></a></li>
                     </ul>
                 </div>
                 <div class="main_content">
                    <div class="content_wrap">
-                        <ul class="home">
+                        <ul class="home list">
                             <li>
                                 <p id="message">
                                     <span></span>
@@ -40,7 +41,7 @@
                                 <img src="img/home-img-1.png" alt="">
                             </li>
                         </ul>
-                        <ul class="web" id="content_web">
+                        <ul class="web list" id="content_web">
                             <li class="l2">
                                 <a href="web/diagnosite/index.html" target="_blank">
                                     <img src="img/ds.png" alt="">
@@ -84,7 +85,7 @@
                             <a href="javascript:;" class="pre "</a>
                             <a href="javascript:;" class="next "></a>
                         </ul>
-                        <ul class="js" id="js">
+                        <ul class="js list" id="js">
                             <li>
                                 <a href="js-html/js0/index.html" target="_blank">
                                 <img src="js-html/js0/js0.png" />
@@ -232,7 +233,7 @@
                             <a href="javascript:;" class="active choice">1</a>
                             <a href="javascript:;"class="choice">2</a>
                         </ul>
-                        <div class="html5_wrap">
+                        <div class="html5_wrap list">
                             <ul class="html5">
                                 <li id="html5">
                                     <a href="html5-html/h0/index.html" target="_blank"><span></span></a>
