@@ -1,13 +1,34 @@
 var oBody=document.body;
-//"overflow-x":"hidden",
-// "overflow-y":"hidden"
 oBody.style.overflowY='hidden';
 window.onload=function(){
 oBody.style.overflowY='auto';
-	//web
+	
 //加载完成
 var oLoad=document.querySelector('#loading');
 oLoad.style.display='none';
+//home
+(function(){
+	var oMsg=document.getElementById('message');
+	var aSpan=oMsg.children;
+	var arr=['姓名：杨天一','年龄：23岁','籍贯：河南省驻马店市','电话：18600709639','邮箱：1170133296@qq.com','学历：大学本科','学校：江西理工大学','住址：北京市西城区'];
+	var iNow=0;
+	function play(n){
+		var i=0;
+		aSpan[n].timer=setInterval(function(){
+			aSpan[n].innerHTML+=arr[n].charAt(i);
+			i++;
+			if(i==arr[n].length){
+				clearInterval(aSpan[n].timer);
+				n++;
+				if(n==arr.length)return;
+				play(n);
+			}
+		},100);
+	}
+	play(iNow);
+})();
+
+//web
 (function(){
 	var oWeb=document.querySelector('#content_web');
 	var aLi=oWeb.querySelectorAll('li');
