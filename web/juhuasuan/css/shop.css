@@ -1,0 +1,220 @@
+*{margin:0; padding:0; list-style:none;font-style: normal;}
+html{font-size:20px;}
+.box header{height:2.525rem; background:-webkit-linear-gradient(#fff,#ebebeb); position:relative;top: 0;left: 0;z-index: 1; text-align:center;z-index: 1;}
+.back{position:absolute;width:3.25rem; height:1.6rem;background:url(../img/back.png) no-repeat; background-size:100%; left:0.55rem; top:0.55rem; }
+.type{position:absolute;width:2.55rem; height:1.55rem;background:url(../img/type.png) no-repeat; background-size:100%; right:0.55rem; top:0.55rem; }
+header img{width:9.4rem; margin-top:0.175rem;}
+.nav{
+	width: 16rem;
+	border-bottom: 0.025rem solid #dcdcdc;
+	overflow: hidden;
+}
+.nav nav{
+	float: left;
+	border-right: 0.025rem solid #dcdcdc;
+	height: 2rem;
+	width: 4rem;
+	box-sizing:border-box;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 0.6rem;
+	color: #999999;
+}
+.nav nav.on{
+	color: #d51942;
+}
+.sp_box{
+	width: 16rem;
+}
+.sp_box ul{
+	display: none;
+}
+.jubaopen{
+	display: none;
+}
+.sp_box .show{
+	display: block;
+}
+.sp_box ul li{
+	width: 16rem;
+	padding:0.5rem;
+	border-bottom: 0.025rem solid #dcdcdc;
+}
+.sp_box ul li img{
+	width: 6.1rem;
+	height: 4.075rem;
+}
+.sp_box ul li .content{
+	width: 7.65rem;
+	height: 4.075rem;
+	padding-left: 0.7rem;
+}
+.sp_box ul li .content p{
+	font-size: 0.7rem;
+	line-height: 0.9rem;
+}
+.sp_box ul li .content p i{
+	color: #d51938;
+}
+.sp_box ul li .content strong{
+	color: #c3213c;
+	font-size: 0.7rem;
+}
+.sp_box ul li .content em{
+	margin-left: 0.6rem;
+	color: #999999;
+	font-size: 0.5rem;
+	position: relative;
+}
+.sp_box ul li .content em i{
+	position: absolute;
+	left: 0;
+	top: 0.3rem;
+	border-top: 0.025rem solid #999;
+	width: 2rem;
+}
+.sp_box ul li span{
+	display: block;
+	color: #999999;
+	font-size: 0.5rem;
+}
+.sp_box ul li.pp-tuan img{
+	width: 15rem;
+	height: 100%;
+	margin-bottom: -0.75rem;
+}
+.sp_box .footer{
+	width: 100%;
+	background-color: #f5f5f5;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	color: #666666;
+	font-size: 0.65rem;
+}
+.jubaopen .banner{width:16rem; height:6.35rem; position:relative; overflow:hidden;}
+.banner ul{position:absolute; top:0; left:0; width:80rem;display: block;}
+.banner ul li{float:left; width:16rem; height:5.7rem;padding:0;}
+.banner ul li img{width:100%;height: 100%;}
+.banner ol{position:absolute; left:50%; bottom:0; width:2.5rem; margin-left:-1.25rem;}
+.banner ol li{float:left; width:0.25rem; height:0.25rem; background:#a9a9a9; border-radius:50%; margin:0 0.125rem; }
+.banner ol li.active{ background:#ff4300;}
+
+.jubaopen .list{
+	width: 16rem;
+	height: 3.95rem;
+	border-bottom: 0.025rem solid #dcdcdc;
+	position: relative;
+	top: 0;
+	left: 0;
+}
+.pinpai .pp-tuan a,.jubaopen .list a{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+.list img.first{
+	width: 1.95rem;
+	position: absolute;
+	top: 0.85rem;
+	left: 1rem;
+}
+.list strong{
+	font-size: 0.85rem;
+	color:#6a237f;
+	position: absolute;
+	top: 0.875rem;
+	left: 4.175rem;
+}
+.list em{
+	font-size: 0.6rem;
+	color:#999999;
+	position: absolute;
+	left: 4.175rem;
+	top: 2.225rem;
+}
+.list img.last{
+	width: 0.325rem;
+	height: 0.55rem;
+	position: absolute;
+	top: 1.7rem;
+	right: 0.9rem;
+}
+.choice{
+	width: 16rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	display: none;
+}
+.choice .close{
+	width: 2rem;
+	height: 25rem;
+	line-height: 25rem;
+	text-align: center;
+	background-color: #adadad;
+	opacity: 0.6;
+}
+.choice .close img{
+	width: 0.925rem;
+	height: 0.775rem;
+}
+.choice .main_content{
+	width: 13rem;
+	height: 25rem;
+	background-color: #333333;
+	padding:0 0.5rem;
+}
+.choice .main_content .choice_nav{
+	border-bottom: 0.025rem solid #404040;
+	height: 2.55rem;
+}
+.choice .main_content .choice_nav li{
+	width: 6.5rem;
+	height: 2.55rem;
+	line-height: 2.55rem;
+	text-align: center;
+	color: white;
+	font-size: 0.7rem;
+	float: left;
+	box-sizing:border-box;
+}
+.choice .main_content .choice_nav li.on{
+	border-bottom: 0.05rem solid white;
+}
+.choice .main_content .content{
+	color: #aaaaaa;
+	display: none;
+}
+.choice .main_content .content li{
+	width: 5.5rem;
+	height: 2rem;
+	float: left;
+	padding-left: 0.9rem;
+	font-size: 0.65rem;
+	line-height: 2rem;
+}
+.choice .main_content .content .now span{
+	color: #aaaaaa;
+	width: 5.5rem;
+	height: 2rem;
+	float: left;
+	padding-left: 0.9rem;
+	font-size: 0.65rem;
+	line-height: 2rem;
+}
+.choice .main_content .content .now a{
+	color: #aaaaaa;
+	width: 5.5rem;
+	height: 2rem;
+	float: right;
+	font-size: 0.65rem;
+	line-height: 2rem;
+	text-decoration: none;
+}
+.choice .main_content .content .now a img{
+	width: 0.325rem;
+	height: 0.55rem;
+	margin-left: 0.65rem;
+}

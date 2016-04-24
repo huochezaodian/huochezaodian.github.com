@@ -1,0 +1,162 @@
+.nav{
+	width: 16rem;
+	height: 8rem;
+	padding:1rem 0.45rem 0;
+}
+.nav nav{
+	width: 2rem;
+	float: left;
+	padding:0 0.9rem;
+}
+.nav nav img{
+	width: 2rem;
+	height: 2rem;
+}
+.nav nav span{
+	line-height: 1rem;
+	display: block;
+	font-size: 0.6rem;
+	color: #acacac;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 0.6rem;
+}
+.hot_box{
+	width: 15rem;
+	padding:0 0.5rem;
+}
+.hot_box .header{
+	width: 15rem;
+	height: 1.6rem;
+	margin:0.6rem 0;
+}
+.hot_box .header span{
+	display: inline-block;
+	line-height: 1.4rem;
+	font-size: 0.8rem;
+	color: #333333;
+	font-weight: bold;
+}
+.hot_box .header span.left{
+	border-left: 0.2rem solid red;
+	text-indent: 0.8rem;
+	width: 11rem;
+}
+.hot_box ul{
+	width: 100%;
+	border-top: 0.2rem solid #dcdcdc;
+	padding-top: 0.8rem;
+}
+.hot_box ul li{
+	width: 100%;
+	height: 3rem;
+	padding-bottom: 0.5rem;
+}
+.hot_box ul li div{
+	color: white;
+	float: left;
+	width: 1.5rem;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	font-size: 0.9rem;
+	font-weight: bold;
+}
+.hot_box ul li img{
+	float: left;
+	width: 4.5rem;
+	height: 3rem;
+}
+.hot_box ul li img.last{
+	width: 9rem;
+	height: 3rem;
+}
+.hot_box ul li div.num1{
+	background-color: #e00202;
+}
+.hot_box ul li div.num2{
+	background-color: #ff4800;
+}
+.hot_box ul li div.num3{
+	background-color: #ff7300;
+}
+.hot_box ul li div.num4{
+	background-color: #ff9d00;
+}
+.hot_box ul li div.num5{
+	background-color: #ffa800;
+}
+.hot_box ul li div.num6{
+	background-color: #ffb400;
+}
+.hot_box ul li div.num7{
+	background-color: #ffba00;
+}
+.hot_box ul li div.num8{
+	background-color: #fcd000;
+}
+.hot_box ul li div.num9{
+	background-color: #ffd719;
+}
+.hot_box ul li div.num10{
+	background-color: #ffe152;
+}
+.hot_box .footer{
+	width: 100%;
+	background-color: #f5f5f5;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	color: #666666;
+	font-size: 0.65rem;
+}
+.sp_tuan,.sh_tuan,.pp_tuan,.down_box{
+	width: 15rem;
+	padding:0.75rem 0.5rem 0;
+}
+.sp_tuan img,.sh_tuan img,.pp_tuan img,.down_box img{
+	width: 100%;
+	height: 11.55rem;
+}
+.down_box img{
+	height: 4rem;
+}
+footer{
+	width: 16rem;
+	margin-top: 0.7rem;
+	background-color: #eeeeee;
+}
+footer .login{
+	color: #333333;
+	height: 2.2rem;
+	width:100%;
+	line-height: 2.2rem;
+	font-size: 0.75rem;
+	background-color: #f8f8f8;
+}
+footer .login a{
+	color: #333333;
+	text-decoration: none;
+}
+footer .login a img{
+	margin-left: 0.1rem;
+}
+footer .footer{
+	padding-top: 0.5rem; 
+}
+footer .footer strong{
+	color: #333333;
+	font-style: normal;
+	display: block;
+	text-align: center;
+	line-height: 1.5rem;
+	font-size: 0.7rem;
+}
+footer .footer em{
+	font-style: normal;
+	display: block;
+	text-align: center;
+	line-height: 1.1rem;
+	font-size: 0.6rem;
+	color: #999999;
+}

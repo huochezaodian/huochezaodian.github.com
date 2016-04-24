@@ -1,0 +1,24 @@
+.clear{
+	*zoom:1;
+}
+.clear:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+body{
+	font-family: "微软雅黑";
+	font-style: normal;
+}
+.box{
+	overflow-x:hidden;
+}
+a{
+	text-decoration: none;
+}

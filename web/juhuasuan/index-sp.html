@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<meta name="viewport"  content="width=device-width,initial-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/shop.css">
+<style>
+</style>
+<script>
+;(function(win,doc){
+	win.onload=win.onresize=function(){
+		doc.documentElement.style.fontSize = doc.documentElement.clientWidth*(20/320)+'px';
+		var oNav=document.querySelector('.nav');
+		var aNa=oNav.children;
+		var aTuan=document.querySelectorAll('.tuan');
+		var iNow=0;
+		for(var i=0;i<aNa.length;i++){
+			aNa[i].index=i;
+			aNa[i].onclick=function(){
+				var re=new RegExp('\\b'+'show'+'\\b');
+				for(var i=0;i<aNa.length;i++){
+					aNa[i].className='';
+					aTuan[i].className=aTuan[i].className.replace(re,'');
+				}
+				iNow=this.index;
+				aNa[iNow].className='on';
+				aTuan[iNow].className+=' show';
+			};
+		}
+
+		var oType=document.querySelector('.type');
+		var oChoice=document.querySelector('.choice');
+		var oClose=oChoice.querySelector('.close');
+		oType.onclick=function(){
+			oChoice.style.display='block';
+		};
+		oClose.onclick=function(){
+			oChoice.style.display='none';
+		};
+
+		var oChoiceNav=oChoice.querySelector('.choice_nav');
+		var aChoice=oChoiceNav.children;
+		var aContent=oChoice.querySelectorAll('.content');
+		for(var i=0;i<aChoice.length;i++){
+			aChoice[i].index=i;
+			aChoice[i].onclick=function(){
+				for(var i=0;i<aChoice.length;i++){
+					aChoice[i].className='';
+					aContent[i].style.display='none';
+				}
+				aChoice[this.index].className='on';
+				aContent[this.index].style.display='block';
+			};
+		}
+	};
+})(window,document);
+</script>
+</head>
+
+<body>
+<section class="box">
+	<header id="head">
+		<a href="index.html" class="back"></a>
+		<img src="img/logo.png" />
+		<a href="javascript:;" class="type"></a>
+	</header>
+	<section class="choice clear">
+		<div class="close fl"><img src="img/double-right.png" alt=""></div>
+		<div class="main_content fr">
+			<ul class="choice_nav">
+				<li class="on">分类</li>
+				<li>地区</li>
+			</ul>
+			<div class="content show" style="display:block;">
+				<ol>
+					<li>全部</li>
+					<li>摄影</li>
+					<li>美食</li>
+					<li>培训</li>
+					<li>休闲</li>
+					<li>旅游</li>
+					<li>生活服务</li>
+					<li>汽车服务</li>
+					<li>摄影</li>
+					<li>美食</li>
+					<li>培训</li>
+					<li>休闲</li>
+					<li>旅游</li>
+					<li>生活服务</li>
+					<li>汽车服务</li>
+					<li>摄影</li>
+					<li>美食</li>
+					<li>培训</li>
+					<li>休闲</li>
+					<li>旅游</li>
+					<li>生活服务</li>
+					<li>汽车服务</li>
+				</ol>
+			</div>
+			<div class="content">
+				<div class="now">
+					<span>杭州</span>
+					<a href="city.html">切换城市<img src="img/right-white.png" alt=""></a>
+				</div>
+				<ol>
+					<li>全部</li>
+					<li>建德区</li>
+					<li>上城区</li>
+					<li>下城区</li>
+					<li>富阳区</li>
+					<li>临安区</li>
+					<li>建德区</li>
+					<li>上城区</li>
+					<li>下城区</li>
+					<li>富阳区</li>
+					<li>临安区</li>
+					<li>建德区</li>
+					<li>上城区</li>
+					<li>下城区</li>
+					<li>富阳区</li>
+					<li>临安区</li>
+					<li>临安区</li>
+					<li>建德区</li>
+					<li>上城区</li>
+					<li>下城区</li>
+					<li>富阳区</li>
+					<li>临安区</li>
+					<li>临安区</li>
+				</ol>
+			</div>
+		</div>
+	</section>
+	<section class="nav clear">
+		<nav class="on">商品</nav>
+		<nav>生活</nav>
+		<nav>品牌</nav>
+		<nav style="border-right:none;">聚宝盆</nav>
+	</section>
+	<section class="sp_box">
+		<ul class="shop tuan show">
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sp-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p><i>1.2折</i> 帅康TA2W欧式油烟机+019B2燃气灶</p>
+					<strong>￥51.00</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+		</ul>
+		<ul class="live tuan">
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+			<li class="clear">
+				<img src="img/sh-nav1.png" alt="" class="fl">
+				<div class="content fl">
+					<p>全网超低价，仅25.9元抢市场价69元荣庆..</p>
+					<strong>￥25.90</strong><em><i></i>￥96.00</em>
+					<span>1240 人已购买</span>
+				</div>
+			</li>
+		</ul>
+		<ul class="pinpai tuan">
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li  class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+			<li class="pp-tuan">
+				<a href="pinpai.html"><img src="img/pp-nav1.png" alt=""></a>
+			</li>
+		</ul>
+		<div class="jubaopen tuan">
+			<div class="banner">
+				<ul>
+					<li><img src="img/jph1.png" /></li>
+					<li><img src="img/jph1.png" /></li>
+					<li><img src="img/jph1.png" /></li>
+					<li><img src="img/jph1.png" /></li>
+					<li><img src="img/jph1.png" /></li>
+				</ul>
+				<ol>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+			<div class="list">
+				<a href="jubaopen.html">
+				<img src="img/ju-nav1.png" alt="" class="first">
+				<strong>聚名品</strong>
+				<em>轻奢购物第一站</em>
+				<img src="img/right-gray.png" alt="" class="last">
+				</a>
+			</div>
+			<div class="list">
+				<a href="jubaopen.html">
+				<img src="img/ju-nav2.png" alt=""  class="first">
+				<strong style="color:#9e5f44;">聚家装</strong>
+				<em>家装一起团  费用省一半！</em>
+				<img src="img/right-gray.png" alt="" class="last">
+				</a>
+			</div>
+			<div class="list">
+				<a href="jubaopen.html">
+				<img src="img/ju-nav3.png" alt="" class="first">
+				<strong style="color:#81ac5e;">聚透</strong>
+				<em>每晚8点&nbsp;&nbsp;预定明日商品</em>
+				<img src="img/right-gray.png" alt="" class="last">
+				</a>
+			</div>
+		</div>
+	</section>
+</section>
+</body>
+</html>
