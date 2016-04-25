@@ -48,7 +48,7 @@ oLoad.style.display='none';
 (function(){
 	var oMsg=document.getElementById('message');
 	var aSpan=oMsg.children;
-	var arr=['姓名：杨天一','年龄：23岁','籍贯：河南省驻马店市','电话：18600709639','邮箱：1170133296@qq.com','学历：大学本科','学校：江西理工大学','住址：北京市西城区'];
+	var arr=['姓名：杨天一','年龄：23岁','电话：18600709639','邮箱：1170133296@qq.com','学历：大学本科','学校：江西理工大学','住址：北京市西城区'];
 	var iNow=0;
 	function play(n){
 		var i=0;
