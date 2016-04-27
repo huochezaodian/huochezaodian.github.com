@@ -144,7 +144,7 @@ oLoad.style.display='none';
 								(function(index){
 									setTimeout(function(){
 										move(aLi[index],{opacity:1,left:aPos[index%6].left,top:aPos[index%6].top,width:200,height:200});
-									},((iNow+1)*6-index)*200);
+									},((iNow+1)*6-index)*100);
 								})(i);
 							}
 						}});
