@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="author" content="智能社 - zhinengshe.com" />
-<meta name="copyright" content="智能社 - zhinengshe.com" />
-<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
 <title>聚划算</title>
 <meta name="viewport"  content="width=device-width,initial-scale=1,user-scalable=no" />
 <link rel="stylesheet" href="css/reset.css">
@@ -16,7 +16,7 @@ html{font-size:20px;}
 .back{position:absolute;width:3.25rem; height:1.6rem; text-indent:-99999rem; background:url(img/back.png) no-repeat; background-size:100%; left:0.55rem; top:0.55rem; }
 header img{width:9.4rem; margin-top:0.175rem;}
 .banner{width:16rem; height:7.45rem; position:relative; overflow:hidden;}
-.banner ul{position:absolute; top:0; left:0; width:80rem;}
+.banner ul{position:absolute; top:0; left:0; width:96rem;height:7.45rem;}
 .banner ul li{float:left; width:16rem; height:7.45rem;}
 .banner ul li img{width:100%;}
 .banner ol{position:absolute; left:50%; bottom:0; width:2.5rem; margin-left:-1.25rem;}
@@ -24,11 +24,105 @@ header img{width:9.4rem; margin-top:0.175rem;}
 .banner ol li.active{ background:#ff4300;}
 </style>
 <script>
-;(function(win,doc){
-	win.onload=win.onresize=function(){
-		doc.documentElement.style.fontSize = doc.documentElement.clientWidth*(20/320)+'px';
-	};
-})(window,document);
+window.onresize=function(){
+	window.location.reload();
+};
+window.onload=function(){
+	
+	document.documentElement.style.fontSize = document.documentElement.clientWidth*(20/320)+'px';
+
+	var rem = parseFloat(document.documentElement.style.fontSize);
+	console.log(rem);
+
+	var oBox=document.querySelector('.banner');
+	var oUl=oBox.querySelector('ul');
+	var oOl=oBox.querySelector('ol');
+	var aLi=oUl.children;
+	var aLi2=oOl.children;
+	var iNow=1;
+	var iNow2=0;
+	var onOff=false;
+	var x=-16;
+	oUl.style.transform='translate3d('+x+'rem,0,0)';
+	oUl.style.WebkitTransform='translate3d('+x+'rem,0,0)';
+	//手动
+	oUl.addEventListener('touchstart',function(ev){
+		if(onOff)return;
+		onOff=true;
+		clearInterval(timer);
+		var oldX=ev.targetTouches[0].pageX/rem;
+		var disX=ev.targetTouches[0].pageX/rem-x;
+		document.addEventListener('touchmove',fnMove,false);
+		document.addEventListener('touchend',fnEnd,false);
+		ev.preventDefault();
+		function fnMove(ev){
+			x=ev.targetTouches[0].pageX/rem-disX;
+			oUl.style.transform='translate3d('+x+'rem,0,0)';
+			oUl.style.WebkitTransform='translate3d('+x+'rem,0,0)';
+		}
+		function fnEnd(ev){
+			document.removeEventListener('touchmove',fnMove,false);
+			document.removeEventListener('touchend',fnEnd,false);
+
+			var newX=ev.changedTouches[0].pageX/rem;
+			var dis=Math.abs(newX-oldX);
+			if(dis>3){
+				if(newX<oldX){
+					iNow++;
+					iNow2++;
+					if(iNow2==aLi2.length){
+						iNow2=0;
+					}
+				}else{
+					iNow--;
+					iNow2--;
+					if(iNow2==-1){
+						iNow2=aLi2.length-1;
+					}
+				}
+			}
+			move();
+			timer=setInterval(next,1000);
+		}
+	},false);
+	//自动
+	var timer=null;
+	clearInterval(timer);
+	timer=setInterval(next,1000);
+	function next(){
+		iNow++;
+		iNow2++;
+		if(iNow2==aLi2.length){
+			iNow2=0;
+		}
+		move();
+	}
+	function move(){
+		oUl.style.WebkitTransition='.4s all ease';
+
+		x=-iNow*aLi[0].offsetWidth/rem;
+		oUl.style.transform='translate3d('+x+'rem,0,0)';
+		oUl.style.WebkitTransform='translate3d('+x+'rem,0,0)';
+
+		oUl.addEventListener('transitionend',traend,false);
+		function traend(){
+			oUl.style.WebkitTransition='none';
+			if(iNow==0){
+				iNow=4;
+			}else if(iNow==5){
+				iNow=1;
+			}
+			x=-iNow*aLi[0].offsetWidth/rem;
+			oUl.style.transform='translate3d('+x+'rem,0,0)';
+			oUl.style.WebkitTransform='translate3d('+x+'rem,0,0)';
+			for(var i=0;i<aLi2.length;i++){
+				aLi2[i].className='';
+			}
+			aLi2[iNow2].className='active';
+			onOff=false;
+		}
+	}
+};
 </script>
 </head>
 
@@ -40,6 +134,8 @@ header img{width:9.4rem; margin-top:0.175rem;}
 	</header>
 	<section class="banner">
 		<ul>
+			<li><img src="img/banner.png" /></li>
+			<li><img src="img/banner.png" /></li>
 			<li><img src="img/banner.png" /></li>
 			<li><img src="img/banner.png" /></li>
 			<li><img src="img/banner.png" /></li>

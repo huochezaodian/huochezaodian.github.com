@@ -37,9 +37,7 @@ oLoad.style.display='none';
 			aLi[iNow].className='cur';
 			aLi[iNow==len-1?0:iNow+1].className='b1';
 
-			//aList[iNow==0?len-1:iNow-1].style.opacity=0;
 			aList[iNow].style.opacity=1;
-			//aList[iNow==len-1?0:iNow+1].style.opacity=0;
 		};
 	}
 })();
@@ -48,7 +46,7 @@ oLoad.style.display='none';
 (function(){
 	var oMsg=document.getElementById('message');
 	var aSpan=oMsg.children;
-	var arr=['姓名：杨天一','年龄：23岁','电话：18600709639','邮箱：1170133296@qq.com','学历：大学本科','学校：江西理工大学','住址：北京市西城区'];
+	var arr=['姓名：杨天一','年龄：23岁','电话：18600709639','邮箱：huochezaodian@sina.com','学历：大学本科','学校：江西理工大学','专业：电子科学与技术'];
 	var iNow=0;
 	function play(n){
 		var i=0;
@@ -105,7 +103,7 @@ oLoad.style.display='none';
 	var aLi=oJs.querySelectorAll('li');
 	var aPos=[{left:30,top:20},{left:320,top:20},{left:600,top:20},{left:30,top:240},{left:320,top:240},{left:600,top:240}];
 	var aA=oJs.querySelectorAll('.choice');
-	var aPos2=[{left:320,top:460},{left:400,top:460},{left:480,top:460}];
+	var aPos2=[{left:320,top:480},{left:400,top:480},{left:480,top:480}];
 	var iNow=0;
 	for(var i=0;i<aLi.length;i++){
 		if(i<6){

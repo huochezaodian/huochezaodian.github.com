@@ -1,17 +1,25 @@
 .main_content .content_wrap {
-  transform-origin: center center -250px;
-  transform: rotateX(0deg);
-  transition: 1s all ease;
+  -webkit-transform-origin: center center -250px;
+      -ms-transform-origin: center center -250px;
+          transform-origin: center center -250px;
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+  -webkit-transition: 1s all ease;
+          transition: 1s all ease;
 }
 .main_content ul.home {
-  transform: rotateX(0);
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
 }
 .main_content ul.web {
-  transform: rotateX(-90deg) translateZ(250px) translateY(250px);
+  -webkit-transform: rotateX(-90deg) translateZ(250px) translateY(250px);
+          transform: rotateX(-90deg) translateZ(250px) translateY(250px);
 }
 .main_content ul.js {
-  transform: rotateX(-180deg) translateZ(500px);
+  -webkit-transform: rotateX(-180deg) translateZ(500px);
+          transform: rotateX(-180deg) translateZ(500px);
 }
 .main_content .html5_wrap {
-  transform: rotateX(90deg) translateZ(250px) translateY(-250px);
+  -webkit-transform: rotateX(90deg) translateZ(250px) translateY(-250px);
+          transform: rotateX(90deg) translateZ(250px) translateY(-250px);
 }
