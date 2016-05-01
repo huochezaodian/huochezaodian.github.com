@@ -15,6 +15,7 @@ function Fish(images,type){
 	this.h=this._size[type].h;
 
 	this.speed=3;
+	this.count=0;
 }
 Fish.prototype=new Sprite();
 Fish.prototype.constructor=Fish;
@@ -26,8 +27,12 @@ Fish.prototype.swimming=function(){
 };
 Fish.prototype.die=function(){
 	this.speed=0;
+	this.count++;
 	this.sx+=this.w;
 	if(this.sx==this.w*8){
-		return true;
+		this.sx=this.w*4;
+		if(this.count>12){
+			return true;
+		}
 	}
 };

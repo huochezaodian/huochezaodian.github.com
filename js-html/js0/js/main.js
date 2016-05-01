@@ -135,14 +135,22 @@ window.onload=function(){
 		var aFish=[];
 		//鱼		
 		var dir=[[[-50,0],[0,oC1.height],[45,135]],[[0,oC1.width],[-50,0],[135,225]],[[oC1.width,oC1.width+50],[0,oC1.height],[225,315]]];
-		setInterval(function(){
+		function getFish(){
 			var fish=new Fish(aResult,rnd(1,6));
 			var sDir=dir[rnd(0,2)];
 			fish.x=rnd(sDir[0][0],sDir[0][1]);
 			fish.y=rnd(sDir[1][0],sDir[1][1]);
 			fish.r=rnd(sDir[2][0],sDir[2][1]);
 			aFish.push(fish);
-		},1000);
+		}
+		var timer1=null;
+		timer1=setInterval(getFish,1000);
+		window.onfocus=function(){
+			timer1=setInterval(getFish,1000);
+		};
+		window.onblur=function(){
+			clearInterval(timer1);
+		};
 		//鲨鱼(太大)
 		// setInterval(function(){
 		// 	var shark=new Shark(aResult,rnd(1,3));
@@ -224,6 +232,7 @@ window.onload=function(){
 			//碰撞检测
 			for(var i=0;i<aFish.length;i++){
 				for(var j=0;j<aBullet.length;j++){
+					if(!aFish[i])return;
 					if(aBullet[j].collTest(aFish[i],cannon.type)){
 						aBullet.splice(j,1);
 						j--;
