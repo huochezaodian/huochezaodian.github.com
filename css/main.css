@@ -113,6 +113,7 @@
           transform-style: preserve-3d;
   -webkit-perspective: 800px;
           perspective: 800px;
+  overflow: hidden;
 }
 .main_body .wrap .main_page .main_content .content_wrap {
   width: 864px;
@@ -331,6 +332,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  overflow: hidden;
 }
 .main_body .wrap .main_page .main_content .content_wrap .html5_wrap .html5 {
   width: 864px;
