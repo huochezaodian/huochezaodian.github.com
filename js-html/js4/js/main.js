@@ -4,6 +4,7 @@ window.onload=function(){
 	var aLi=oUl.children;
 	var oldIndex=null;
 	var newIndex=null;
+	var onOff=false;
 	//存位置
 	var aPos=[];
 	for(var i=0;i<aLi.length;i++){
@@ -43,6 +44,7 @@ window.onload=function(){
 					aPos.splice(newIndex,1,cur);
 					newIndex=null;
 					oldIndex=null;
+					onOff=false;
 				}});
 			}else{
 				move(aLi[oldIndex],{left:aPos[oldIndex].left,top:aPos[oldIndex].top},{end:function(){
@@ -51,12 +53,15 @@ window.onload=function(){
 						border:'none'
 					});
 					oldIndex=null;
+					onOff=false;
 				}});
 			}
 		});
 	}
 	function drag(index,obj,fn){
 		obj.onmousedown=function(ev){
+			if(onOff)return;
+			onOff=true;
 			oldIndex=index;
 			setStyle(this,{
 				zIndex:2,
