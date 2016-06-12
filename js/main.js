@@ -103,7 +103,7 @@ oLoad.style.display='none';
 	var aLi=oJs.querySelectorAll('li');
 	var aPos=[{left:30,top:20},{left:320,top:20},{left:600,top:20},{left:30,top:240},{left:320,top:240},{left:600,top:240}];
 	var aA=oJs.querySelectorAll('.choice');
-	var aPos2=[{left:320,top:480},{left:400,top:480},{left:480,top:480}];
+	var aPos2=[{left:320,top:460},{left:400,top:460},{left:480,top:460}];
 	var iNow=0;
 	for(var i=0;i<aLi.length;i++){
 		if(i<6){
@@ -142,7 +142,7 @@ oLoad.style.display='none';
 								(function(index){
 									setTimeout(function(){
 										move(aLi[index],{opacity:1,left:aPos[index%6].left,top:aPos[index%6].top,width:200,height:200});
-									},((iNow+1)*6-index)*100);
+									},((iNow+1)*6-index)*200);
 								})(i);
 							}
 						}});
