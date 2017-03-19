@@ -169,12 +169,6 @@ oLoad.style.display='none';
 		oBox.removeChild(this);
 		for(var i=0;i<N;i++){
 		 	aS[i].onclick = function(){
-		 		console.log(isClick);
-				if(!isClick)return false;
-		 	}
-
-		 	a[i].onclick = function(){
-		 		console.log(isClick);
 				if(!isClick)return false;
 		 	}
 			aS[i].style.WebkitTransition = '1s all ease '+(N-i)*300+'ms';
@@ -201,8 +195,7 @@ oLoad.style.display='none';
 		var lastY=0;
 		var timer=null;
 		oBox.onmousedown=function(ev){
-
-				isClick = true;
+			isClick = true;
 			clearInterval(timer);
 			var disX = ev.pageX-y;
 			var disY = ev.pageY-x;
@@ -217,7 +210,6 @@ oLoad.style.display='none';
 				lastY = ev.pageY;
 			};
 			document.onmouseup=function(){
-				//isClick = true;
 				document.onmousemove=null;
 				document.onmouseup=null;
 				//iSpeedX 		y
