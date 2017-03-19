@@ -156,7 +156,6 @@ oLoad.style.display='none';
 (function(){
 	var oBox=document.querySelector('#html5');
 	var aS=oBox.querySelectorAll('span');
-	var a = oBox.querySelectorAll('a');
 	var N=aS.length-1;
 	var isClick = true;
 	for(var i=0;i<=N;i++){
@@ -168,9 +167,9 @@ oLoad.style.display='none';
 	aS[N].onclick=function(){
 		oBox.removeChild(this);
 		for(var i=0;i<N;i++){
-		 	aS[i].onclick = function(){
+			aS[i].onclick=function(){
 				if(!isClick)return false;
-		 	}
+			}
 			aS[i].style.WebkitTransition = '1s all ease '+(N-i)*300+'ms';
 			aS[i].style.MozTransition = '1s all ease '+(N-i)*300+'ms';
 			aS[i].style.msTransition = '1s all ease '+(N-i)*300+'ms';
@@ -200,7 +199,6 @@ oLoad.style.display='none';
 			var disX = ev.pageX-y;
 			var disY = ev.pageY-x;
 			document.onmousemove=function(ev){
-				isClick = false;
 				x = ev.pageY-disY;
 				y = ev.pageX-disX;
 				oBox.style.WebkitTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
@@ -208,10 +206,14 @@ oLoad.style.display='none';
 				speedY = ev.pageY-lastY;
 				lastX = ev.pageX;
 				lastY = ev.pageY;
+				setTimeout(function(){
+					isClick = false;
+				},300);
 			};
 			document.onmouseup=function(){
-				document.onmousemove=null;
 				document.onmouseup=null;
+				document.onmousemove=null;
+				if(isClick)return;
 				//iSpeedX 		y
 				//iSpeedY 		x
 				timer = setInterval(function(){
