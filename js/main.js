@@ -156,7 +156,9 @@ oLoad.style.display='none';
 (function(){
 	var oBox=document.querySelector('#html5');
 	var aS=oBox.querySelectorAll('span');
+	var a = oBox.querySelectorAll('a');
 	var N=aS.length-1;
+	var isClick = true;
 	for(var i=0;i<=N;i++){
 		if(i<N){
 			aS[i].style.backgroundImage= 'url(html5-html/h'+i+'/h'+i+'.png)';
@@ -166,12 +168,21 @@ oLoad.style.display='none';
 	aS[N].onclick=function(){
 		oBox.removeChild(this);
 		for(var i=0;i<N;i++){
+		 	aS[i].onclick = function(){
+		 		console.log(isClick);
+				if(!isClick)return false;
+		 	}
+
+		 	a[i].onclick = function(){
+		 		console.log(isClick);
+				if(!isClick)return false;
+		 	}
 			aS[i].style.WebkitTransition = '1s all ease '+(N-i)*300+'ms';
 			aS[i].style.MozTransition = '1s all ease '+(N-i)*300+'ms';
 			aS[i].style.msTransition = '1s all ease '+(N-i)*300+'ms';
 			aS[i].style.OTransition = '1s all ease '+(N-i)*300+'ms';
 			aS[i].style.transition = '1s all ease '+(N-i)*300+'ms';
-			 (function(index){
+			(function(index){
 			 	setTimeout(function(){
 					aS[index].style.WebkitTransform='rotateY(-'+index*360/N+'deg) translateZ(300px)';
 					aS[index].style.MozTransform='rotateY(-'+index*360/N+'deg) translateZ(300px)';
@@ -179,7 +190,7 @@ oLoad.style.display='none';
 					aS[index].style.OTransform='rotateY(-'+index*360/N+'deg) translateZ(300px)';
 					aS[index].style.transform='rotateY(-'+index*360/N+'deg) translateZ(300px)';
 				});
-			 })(i);
+			})(i);
 		}
 		//拖拽
 		var x=0;
@@ -190,10 +201,13 @@ oLoad.style.display='none';
 		var lastY=0;
 		var timer=null;
 		oBox.onmousedown=function(ev){
+
+				isClick = true;
 			clearInterval(timer);
 			var disX = ev.pageX-y;
 			var disY = ev.pageY-x;
 			document.onmousemove=function(ev){
+				isClick = false;
 				x = ev.pageY-disY;
 				y = ev.pageX-disX;
 				oBox.style.WebkitTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
@@ -203,6 +217,7 @@ oLoad.style.display='none';
 				lastY = ev.pageY;
 			};
 			document.onmouseup=function(){
+				//isClick = true;
 				document.onmousemove=null;
 				document.onmouseup=null;
 				//iSpeedX 		y
