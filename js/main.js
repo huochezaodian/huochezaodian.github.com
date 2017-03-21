@@ -46,7 +46,7 @@ oLoad.style.display='none';
 (function(){
 	var oMsg=document.getElementById('message');
 	var aSpan=oMsg.children;
-	var arr=['姓名：杨天一','年龄：23岁','电话：18600709639','邮箱：huochezaodian@sina.com','学历：大学本科','学校：江西理工大学','专业：电子科学与技术'];
+	var arr=['姓名：杨天一','年龄：24岁','电话：13051724962','邮箱：huochezaodian@sina.com','学历：大学本科','学校：江西理工大学','专业：电子科学与技术'];
 	var iNow=0;
 	function play(n){
 		var i=0;
